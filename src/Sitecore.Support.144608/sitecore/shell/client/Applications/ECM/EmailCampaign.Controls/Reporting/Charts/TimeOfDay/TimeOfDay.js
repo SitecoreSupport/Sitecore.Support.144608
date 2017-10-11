@@ -35,9 +35,11 @@
             var group = this.getHourGroup(),
                 data = group.top(Infinity);
 
+            /* Modified Code Begin*/
             var d = new Date();
             d.setUTCHours(data[0].key);
             data[0].key = d.getHours();
+            /* Modified Code End */
 
             this.set('hours', this.processData(data));
         }

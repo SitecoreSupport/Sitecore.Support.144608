@@ -33,9 +33,11 @@
             },
             setHourRange: function (item) {
 
+                /* Modified Code Begin*/
                 var d = new Date();
                 d.setUTCHours(item.hour);
                 item.hour = d.getHours();
+                /* Modified Code End */
 
                 item.hourRange = item.hour + ":00 - ";
                 if (item.hour === 23) {
