@@ -32,6 +32,11 @@
                 item.dayOfWeek = dayNames[item.dayOfWeek - 1];
             },
             setHourRange: function (item) {
+
+                var d = new Date();
+                d.setUTCHours(item.hour);
+                item.hour = d.getHours();
+
                 item.hourRange = item.hour + ":00 - ";
                 if (item.hour === 23) {
                     item.hourRange += 0 + ":00";

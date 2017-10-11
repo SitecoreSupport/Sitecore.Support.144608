@@ -34,6 +34,11 @@
         reCalculate: function () {
             var group = this.getHourGroup(),
                 data = group.top(Infinity);
+
+            var d = new Date();
+            d.setUTCHours(data[0].key);
+            data[0].key = d.getHours();
+
             this.set('hours', this.processData(data));
         }
     });

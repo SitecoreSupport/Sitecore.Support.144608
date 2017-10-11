@@ -32,6 +32,10 @@
                 var hour = Number(bestTimeOfDay.key),
                     visits = bestTimeOfDay.value[this.model.get('eventType')];
 
+                var d = new Date();
+                d.setUTCHours(hour);
+                hour = d.getHours();
+
                 this.children.ScoreCard.set('value', hour + ':00' + '-' + (hour + 1) + ':00');
                 this.children.ScoreCard.set(
                     'description',
